@@ -1,0 +1,19 @@
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: INFO
+    com.swamy.samplejms.listeners.SalesListener: INFO
+    com.swamy.samplejms.services.ReportGenerationService: INFO
+spring:
+  activemq:
+    broker-url: vm://embedded?broker.persistent=false,useShutdownHook=false
+    in-memory: true
+    non-blocking-redelivery: true
+    packages:
+      trust-all: false
+      trusted: com.swamy.samplejms.model
+report:
+  sales:
+    count: 10
+  adjustment:
+    count: 50
